@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^([^/]+)/?$ $1.php [L]
+Options -Indexes +MultiViews
+RewriteRule ^games/([0-9]+)(/[^/]+)?/?$ Place.aspx.php?placeId=$1 [L,QSA]
+
+<Files "arbitterHelper.php">
+deny from all
+</Files>
